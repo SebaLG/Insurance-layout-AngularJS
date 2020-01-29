@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="projectKimbap">
 
 <head>
 
@@ -20,7 +20,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" ng-controller="MainController as main">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -41,7 +41,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="#!home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Welcome to Project Kimbap</span></a>
             </li>
@@ -152,19 +152,19 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div ng-view class="container-fluid" >
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Welcome!</h1>
                     </div>
 
                     <a href="#" class="btn btn-lg btn-info btn-icon-split">
                         <span class="icon text-white-50">
-              <i class="fas fa-2x fa-car-side"></i>
-            </span>
+                            <i class="fas fa-2x fa-car-side"></i>
+                        </span>
                         <span class="text">Buy your car policy</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -214,6 +214,10 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -231,6 +235,7 @@
     <script src="assets/js/demo/chart-area-demo.js"></script>
     <script src="assets/js/demo/chart-pie-demo.js"></script>
 
+    
 </body>
 
 </html>
