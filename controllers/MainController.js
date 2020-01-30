@@ -1,29 +1,40 @@
-var app = angular.module('projectKimbap',["ngRoute"]);
+var app = angular.module('projectKimbap', ["ngRoute"]);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-    .when('/home', {
-        templateUrl: 'components/home.html', controller: 'HomeController', controllerAs: 'Home'
-    })
-    .when('/temp1', {
-        templateUrl: 'component/temp1.html', controller: '', controllerAs: ''
-    })
-    .when('/temp2', {
-        templateUrl: 'component/temp2.html', controller: '', controllerAs: ''
-    })
-    .otherwise({
-        redirectTo: '/'
-    });
+        .when('/home', {
+            templateUrl: 'components/home.html',
+            controller: 'HomeController',
+            controllerAs: 'Home'
+        })
+        .when('/coverages', {
+            templateUrl: 'component/coverages.html',
+            controller: 'HomeController',
+            controllerAs: 'Home'
+        })
+        .when('/personalForm', {
+            templateUrl: 'component/personalForm.html',
+            controller: 'HomeController',
+            controllerAs: 'Home'
+        })
+        .when('/summary', {
+            templateUrl: 'component/summary.html',
+            controller: 'HomeController',
+            controllerAs: 'Home'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 }]);
 
-app.controller('MainController', ['$route', '$routeParams', '$location', function($route, $routeParams, $location){
+app.controller('MainController', ['$route', '$routeParams', '$location', function($route, $routeParams, $location) {
     console.log("dd")
     this.hdetails = {
         name: 'temp'
     };
-  this.$route = $route;
-  this.$routeParams = $routeParams;
-  this.$location = $location;
+    this.$route = $route;
+    this.$routeParams = $routeParams;
+    this.$location = $location;
 }]);
 
 app.controller("HomeController", function($scope) {
