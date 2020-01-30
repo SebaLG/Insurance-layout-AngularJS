@@ -20,10 +20,10 @@
 
 </head>
 
-<body id="page-top" ng-controller="MainController as main">
+<body id="page-top">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" ng-controller="MainController as main">
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -45,7 +45,21 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Welcome to Project Kimbap</span></a>
             </li>
-
+            <li class="nav-item active">
+                <a class="nav-link" href="#!coverages">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Coverages</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#!personalForm">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>PersonalForm</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#!summary">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Summary</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -213,10 +227,11 @@
             </div>
         </div>
     </div>
-
+    <!--  AndgularJS  -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.js"></script>
 
+    <script src="controllers/MainController.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
