@@ -28,17 +28,38 @@ app.config(['$routeProvider', function($routeProvider) {
 }]);
 
 app.controller('MainController', ['$route', '$routeParams', '$location', function($route, $routeParams, $location) {
-    // this.hdetails = {
-    //     name: 'temp'
-    // };
     this.$route = $route;
     this.$routeParams = $routeParams;
     this.$location = $location;
 }]);
 
-app.controller("HomeController", function($scope) {
+app.controller("HomeController", [ '$scope', "formFactory", "$http", "$window", function($scope, formFactory, $http, $window) {
     $scope.message = "HOME PAGE";
-});
+    $scope.list = [];
+    $scope.submit = function() {
+      if(formFactory != null) {
+        $scope.list = formFactory.getPeople()
+      }
+      
+      $scope.list.push($scope.model)           
+      formFactory.setPeople($scope.list)
+      console.log(formFactory.getPeople())
+    }
+}]);
+
+// TODO to use Firebase
+app.factory("formFactory", ["$window", function($window) {
+    var result = {
+        setPeople: function(value){
+            $window.localStorage.setItem("people", JSON.stringify(value));
+        },
+        getPeople: function() {
+            var list = $window.localStorage.getItem("people")
+            return JSON.parse(list)
+        }
+    }
+    return result;
+}])
 
 app.controller("CoveragesController", function($scope) {
     $scope.message = "COVERAGES PAGE";
