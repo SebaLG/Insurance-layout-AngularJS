@@ -27,11 +27,7 @@ app.config(['$routeProvider', function($routeProvider) {
         });
 }]);
 
-app.controller('MainController', ['$route', '$routeParams', '$location', function($route, $routeParams, $location) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 7abe342a25bcea6a0cabef419f40fdd356e4772a
+app.controller('MainController', ['$route', '$routeParams', '$location', "formFactory", "$scope", function($route, $routeParams, $location, formFactory, $scope) {
     this.$route = $route;
     this.$routeParams = $routeParams;
     this.$location = $location;
@@ -49,25 +45,13 @@ app.controller('MainController', ['$route', '$routeParams', '$location', functio
 
     // method to add an item to the list
     controller.addCoverages = () => {
-
-
         console.log("TCL: controller.coverages", controller.coverages)
             // Put the object into storage
         localStorage.setItem('coverages', JSON.stringify(controller.coverages));
         $('#form-coverages').submit();
         $location.path("/personalForm");
-
-
-
     };
 
-
-
-
-}]);
-
-app.controller("HomeController", [ '$scope', "formFactory", "$http", "$window", function($scope, formFactory, $http, $window) {
-    $scope.message = "HOME PAGE";
     $scope.list = [];
     $scope.submit = function() {
       if(formFactory != null) {
@@ -80,7 +64,6 @@ app.controller("HomeController", [ '$scope', "formFactory", "$http", "$window", 
     }
 }]);
 
-// TODO to use Firebase
 app.factory("formFactory", ["$window", function($window) {
     var result = {
         setPeople: function(value){
@@ -93,15 +76,4 @@ app.factory("formFactory", ["$window", function($window) {
     }
     return result;
 }])
-
-app.controller("CoveragesController", function($scope) {
-    $scope.message = "COVERAGES PAGE";
-});
-
-app.controller("FormController", function($scope) {
-    $scope.message = "PERSONAL FORM PAGE";
-});
-
-app.controller("SummaryController", function($scope) {
-    $scope.message = "SUMMARY PAGE";
-});
+;
