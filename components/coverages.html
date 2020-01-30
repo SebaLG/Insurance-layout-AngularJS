@@ -22,7 +22,7 @@
         </div>
 
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" ng-click="controller.calculatePrice()">
             See Final Price
         </button>
 
@@ -37,7 +37,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        El precio total será de:
+                        El precio total será de: {{controller.totalPrice}}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -36,26 +36,31 @@ app.controller('MainController', ['$route', '$routeParams', '$location', functio
     var controller = this;
 
     controller.coverages = [
-        { name: "RCA", price: "100€", selected: "false" },
-        { name: "Kasko", price: "150€", selected: "false" },
-        { name: "Collision", price: "10€", selected: "false" },
-        { name: "Fire", price: "99€", selected: "false" }
+        { name: "RCA", price: 100, selected: false },
+        { name: "Kasko", price: 150, selected: false },
+        { name: "Collision", price: 100, selected: false },
+        { name: "Fire", price: 9, selected: false }
     ];
+
+    controller.totalPrice = 0
 
     console.log("TCL: controller.coverages", controller.coverages)
 
     // method to add an item to the list
     controller.addCoverages = () => {
-
-
         console.log("TCL: controller.coverages", controller.coverages)
             // Put the object into storage
         localStorage.setItem('coverages', JSON.stringify(controller.coverages));
         $('#form-coverages').submit();
         $location.path("/personalForm");
+    };
 
-
-
+    // method to add an item to the list
+    controller.calculatePrice = () => {
+        controller.totalPrice = 0
+        controller.coverages.forEach((coverage, index) => {
+            if (coverage.selected) controller.totalPrice = controller.totalPrice + coverage.price;
+        });
     };
 
 
