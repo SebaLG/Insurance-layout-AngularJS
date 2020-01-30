@@ -10,7 +10,7 @@
                         <div class="col mr-2">
                             <div style="font-size: 1.6em;" class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{coverage.name}}
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{coverage.price}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{coverage.price}}€</div>
                         </div>
                         <div class="col-auto">
                             <input style="width: 1em; height: 1em;" type="checkbox" name="selectedCoverages" value="{{coverage.name}}" ng-model="coverage.selected">
@@ -37,7 +37,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        El precio total será de: {{controller.totalPrice}}
+                        <h2>The total price is : {{controller.totalPrice}}€</h2>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
